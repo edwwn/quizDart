@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class LandingPage extends StatelessWidget{
   @override
   Widget build(BuildContext context){
-      return new Material(
+      return new Stack(
         color: Colors.greenAccent,
         child: new InkWell(
           onTap: ()=> print("We tapped the Page!!"),
