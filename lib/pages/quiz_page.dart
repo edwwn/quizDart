@@ -12,9 +12,10 @@ class QuizPageState extends State<QuizPage>{
   Widget build(BuildContext context){
     return new Stack(
       children: <Widget>[
-        new Column(
+        new Column(//THIS IS OUR MAIN PAGE
           children: <Widget>[
-            new Material(
+            new Expanded(
+              child: new Material(//THIS IS THE TRUE BUTTON
               color: Colors.greenAccent,
               child: new InkWell(
                 onTap: ()=>print("You answered True"),
@@ -24,13 +25,11 @@ class QuizPageState extends State<QuizPage>{
                   ) ,
                 ),
               ),
+            ),
             )
           ],
         )
       ],
-    )
-    
+    );
   }
-
-
 }
