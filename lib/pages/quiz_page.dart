@@ -45,9 +45,6 @@ class QuizPageState extends State<QuizPage>{
     });
   }
 
-
-
-
   @override
   Widget build(BuildContext context){
     return new Stack(
@@ -60,7 +57,17 @@ class QuizPageState extends State<QuizPage>{
             new AnswerButton(false, () => handleAnswer(false)),// false button
           ],
         ),
-       overlayShouldBeVisible == true? new CorrectWrongOverlay(isCorrect): new Container()
+       overlayShouldBeVisible == true? new CorrectWrongOverlay(
+         isCorrect,
+         (){
+           currentQuestion = quiz.nextQuestion;
+            this.setState((){
+              overlayShouldBeVisible =true;
+              questionText = currentQuestion.question;
+              questionNumber = quiz.questionNumber;
+            });
+         }
+         ): new Container()
       ], 
     );
   }
