@@ -45,7 +45,7 @@ class CorrectWrongOverlayState extends State<CorrectWrongOverlay> with SingleTic
               ),
               child: new Transform.rotate(
                 angle: _iconAnimation.value*2*pi,
-               child: new Icon(widget._isCorrect == true? Icons.done: Icons.clear, size: 90.0,) ,
+                child: new Icon(widget._isCorrect == true? Icons.done: Icons.clear, size: _iconAnimation.value* 90.0,) ,
               )
             ),
             new Padding(
