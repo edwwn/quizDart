@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './landing_page.dart';
 
 class ScorePage extends StatelessWidget{
 
@@ -17,11 +18,11 @@ class ScorePage extends StatelessWidget{
         children: <Widget>[
           new Text("Your Score is : ", style: new TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 50.0),),
           new Text(score.toString() +"/"+ totalQuestions.toString(),style: new TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 50.0),),
-          new IconButton(
+          new IconButton( 
             icon: new Icon(Icons.arrow_right),
             color: Colors.black,
             iconSize: 50.0,
-            onPressed: ()=> print("Cool"),
+            onPressed: ()=> Navigator.of(context).pushAndRemoveUntil(new MaterialPageRoute(builder: (BuildContext context)=> new LandingPage()), (Route route)=> route ==null),
           )
 
         ],
